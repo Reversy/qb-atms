@@ -142,12 +142,12 @@ AddEventHandler('qb-atms:client:loadATM', function(cards)
                         cards = cards,
                     })
                 end, function()
-                    QBCore.Functions.Notify("Failed!", "error")
+                    QBCore.Functions.Notify("Echec!", "error")
                 end)
             end
         end     
     else
-        QBCore.Functions.Notify("You do not have a debit card to pay with, please visit a branch to order a card. or ensure one is on your person.", "error")
+        QBCore.Functions.Notify("Vous n'avez pas de carte de crédit pour payer, veuillez vous rendre en succursale pour commander une carte", "error")
     end
 end)
 
@@ -158,9 +158,9 @@ RegisterNUICallback("removeCard", function(data, cb)
             SendNUIMessage({
                 status = "closeATM"
             })
-            QBCore.Functions.Notify('Card has deleted.', 'success')
+            QBCore.Functions.Notify('Carte supprimé.', 'success')
         else
-            QBCore.Functions.Notify('Failed to delete card.', 'error')
+            QBCore.Functions.Notify('Echec de la suppression.', 'error')
         end
     end, data)
 end)
